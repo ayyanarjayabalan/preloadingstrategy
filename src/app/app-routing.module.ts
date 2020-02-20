@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules, NoPreloading } from '@angular/router';
 import { CustomPreLoadingStrategyService } from './custom-pre-loading-strategy.service';
+import { NetworkawarepreLoadingstrategyService } from './networkawarepre-loadingstrategy.service';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { preloadingStrategy: CustomPreLoadingStrategyService })],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: NetworkawarepreLoadingstrategyService })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
