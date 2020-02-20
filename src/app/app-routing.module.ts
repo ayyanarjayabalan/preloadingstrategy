@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules, NoPreloading } from '@angular/router';
 import { CustomPreLoadingStrategyService } from './custom-pre-loading-strategy.service';
 import { NetworkawarepreLoadingstrategyService } from './networkawarepre-loadingstrategy.service';
+import { CourselistComponent } from './courselist/courselist.component';
+import { CourseResolverService } from './course-resolver.service';
 
 
 const routes: Routes = [
@@ -19,6 +21,7 @@ const routes: Routes = [
     path: 'reports',
     loadChildren: () => import('./report/report.module').then(m => m.ReportModule)
   },
+  { path: 'courses', component: CourselistComponent, resolve: { courses: CourseResolverService } },
 ];
 
 @NgModule({
